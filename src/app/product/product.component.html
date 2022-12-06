@@ -1,0 +1,15 @@
+<div class="product-container">
+    <div>
+        <img src="/assets/images/book.jpeg">
+    </div>
+    <div class="name"><h3>{{name}}</h3></div>
+    <div class="price">RM {{price}}</div>
+    <div class="qty-container">
+        <button class="minus inline-display" (click)="minusFromCart()">-</button>
+        <div class="quantity inline-display">{{quantity}}</div>
+        <button class="add inline-display" (click)="addToCart()">+</button>
+    </div>
+
+
+
+</div>
