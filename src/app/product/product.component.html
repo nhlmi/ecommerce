@@ -1,15 +1,22 @@
 <div class="product-container">
     <div>
-        <img src="/assets/images/book.jpeg">
+        <img src="/assets/images/book.jpeg" style="width: 150px;">
     </div>
-    <div class="name"><h3>{{name}}</h3></div>
-    <div class="price">RM {{price}}</div>
+
+    <div class="name"><h3>{{product.name}}</h3></div>
+    <div class="price" [class]="product.isOnSale() ? 'orange' : 'yellow'">RM {{product.price}}</div>
+
     <div class="qty-container">
-        <button class="minus inline-display" (click)="minusFromCart()">-</button>
-        <div class="quantity inline-display">{{quantity}}</div>
-        <button class="add inline-display" (click)="addToCart()">+</button>
+        <button class="minus inline-display" (click)="product.isMinus()">-</button>
+        <div class="quantity inline-display">{{product.cart}}</div>
+        <button class="add inline-display" (click)="product.isAdd()" *ngIf="!product.isZero()">+</button>
     </div>
 
-
+    <div class="dropdown" >
+        <select>
+            <option *ngFor="let qty of quantities; index as i;">{{qty}}</option>
+        </select>
+        <!-- <div>{{qty}}</div> -->
+    </div>
 
 </div>

@@ -9,3 +9,13 @@
     display: inline;
     margin-right: 3px;
 }
+
+.orange{
+    color: orangered;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.yellow{
+    color: yellow;
+}
